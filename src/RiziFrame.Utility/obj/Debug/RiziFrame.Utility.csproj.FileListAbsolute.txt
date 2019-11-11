@@ -1,0 +1,10 @@
+D:\NetWs\zhiyueBook\bin\RiziFrame.Utility.dll
+D:\NetWs\zhiyueBook\bin\RiziFrame.Utility.pdb
+D:\NetWs\bin\RiziFrame.Utility.dll
+D:\NetWs\bin\RiziFrame.Utility.pdb
+D:\NetWs\zhiyueBook\src\RiziFrame.Utility\obj\Debug\RiziFrame.Utility.Ui.BaseForm.resources
+D:\NetWs\zhiyueBook\src\RiziFrame.Utility\obj\Debug\RiziFrame.Utility.csproj.GenerateResource.Cache
+D:\NetWs\zhiyueBook\src\RiziFrame.Utility\obj\Debug\RiziFrame.Utility.dll
+D:\NetWs\zhiyueBook\src\RiziFrame.Utility\obj\Debug\RiziFrame.Utility.pdb
+D:\NetWs\bin\log4net.config
+D:\NetWs\zhiyueBook\src\RiziFrame.Utility\obj\Debug\RiziFrame.Utility.csprojResolveAssemblyReference.cache

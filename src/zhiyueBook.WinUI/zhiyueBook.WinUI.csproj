@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6BB1FD8B-F122-4123-9193-13FCF5817424}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>zhiyueBook.WinUI</RootNamespace>
+    <AssemblyName>zhiyueBook.WinUI</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite, Version=1.0.66.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=x86" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JyxxForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JyxxForm.Designer.cs">
+      <DependentUpon>JyxxForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm1.Designer.cs">
+      <DependentUpon>MainForm1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PostArg.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TjjyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TjjyForm.Designer.cs">
+      <DependentUpon>TjjyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TjjyfxForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TjjyfxForm.Designer.cs">
+      <DependentUpon>TjjyfxForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TjtsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TjtsForm.Designer.cs">
+      <DependentUpon>TjtsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TjtsxxFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TjtsxxFrom.Designer.cs">
+      <DependentUpon>TjtsxxFrom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PostTjts.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JyxxForm.resx">
+      <DependentUpon>JyxxForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm1.resx">
+      <DependentUpon>MainForm1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TjjyForm.resx">
+      <DependentUpon>TjjyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TjjyfxForm.resx">
+      <DependentUpon>TjjyfxForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TjtsForm.resx">
+      <DependentUpon>TjtsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TjtsxxFrom.resx">
+      <DependentUpon>TjtsxxFrom.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RiziFrame.Utility\RiziFrame.Utility.csproj">
+      <Project>{848C82C9-FF5B-4B9C-A571-A92F282BC0A9}</Project>
+      <Name>RiziFrame.Utility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\zhiyueBook.DAL\zhiyueBook.DAL.csproj">
+      <Project>{e11a6885-8f00-424e-9717-0cf189f6c320}</Project>
+      <Name>zhiyueBook.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\zhiyueBook.Model\zhiyueBook.Model.csproj">
+      <Project>{a21d15e8-c688-417a-8f1f-339310a6e033}</Project>
+      <Name>zhiyueBook.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

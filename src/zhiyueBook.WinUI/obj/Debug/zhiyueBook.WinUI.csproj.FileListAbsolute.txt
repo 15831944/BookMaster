@@ -1,0 +1,17 @@
+D:\NetWs\zhiyueBook\src\zhiyueBook.WinUI\bin\Debug\zhiyueBook.WinUI.dll
+D:\NetWs\zhiyueBook\src\zhiyueBook.WinUI\bin\Debug\zhiyueBook.WinUI.pdb
+D:\NetWs\zhiyueBook\bin\zhiyueBook.WinUI.dll
+D:\NetWs\zhiyueBook\bin\zhiyueBook.WinUI.pdb
+D:\NetWs\zhiyueBook\src\zhiyueBook.WinUI\obj\Debug\zhiyueBook.WinUI.csprojResolveAssemblyReference.cache
+D:\NetWs\zhiyueBook\src\zhiyueBook.WinUI\obj\Debug\zhiyueBook.WinUI.Form1.resources
+D:\NetWs\zhiyueBook\src\zhiyueBook.WinUI\obj\Debug\zhiyueBook.WinUI.JyxxForm.resources
+D:\NetWs\zhiyueBook\src\zhiyueBook.WinUI\obj\Debug\zhiyueBook.WinUI.MainForm.resources
+D:\NetWs\zhiyueBook\src\zhiyueBook.WinUI\obj\Debug\zhiyueBook.WinUI.MainForm1.resources
+D:\NetWs\zhiyueBook\src\zhiyueBook.WinUI\obj\Debug\zhiyueBook.WinUI.TjjyForm.resources
+D:\NetWs\zhiyueBook\src\zhiyueBook.WinUI\obj\Debug\zhiyueBook.WinUI.csproj.GenerateResource.Cache
+D:\NetWs\zhiyueBook\src\zhiyueBook.WinUI\obj\Debug\zhiyueBook.WinUI.dll
+D:\NetWs\zhiyueBook\src\zhiyueBook.WinUI\obj\Debug\zhiyueBook.WinUI.pdb
+D:\NetWs\zhiyueBook\src\zhiyueBook.WinUI\obj\Debug\zhiyueBook.WinUI.TjjyfxForm.resources
+D:\NetWs\zhiyueBook\src\zhiyueBook.WinUI\obj\Debug\zhiyueBook.WinUI.TjtsForm.resources
+D:\NetWs\zhiyueBook\bin\log4net.config
+D:\NetWs\zhiyueBook\src\zhiyueBook.WinUI\obj\Debug\zhiyueBook.WinUI.TjtsxxFrom.resources

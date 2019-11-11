@@ -1,0 +1,5 @@
+D:\NetWs\zhiyueBook\bin\zhiyueBook.Model.dll
+D:\NetWs\zhiyueBook\bin\zhiyueBook.Model.pdb
+D:\NetWs\zhiyueBook\src\zhiyueBook.Model\obj\Debug\zhiyueBook.Model.dll
+D:\NetWs\zhiyueBook\src\zhiyueBook.Model\obj\Debug\zhiyueBook.Model.pdb
+D:\NetWs\zhiyueBook\src\zhiyueBook.Model\obj\Debug\zhiyueBook.Model.csprojResolveAssemblyReference.cache

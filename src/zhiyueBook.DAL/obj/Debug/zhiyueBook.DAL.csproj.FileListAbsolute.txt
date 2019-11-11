@@ -1,0 +1,6 @@
+D:\NetWs\zhiyueBook\bin\zhiyueBook.DAL.dll
+D:\NetWs\zhiyueBook\bin\zhiyueBook.DAL.pdb
+D:\NetWs\zhiyueBook\src\zhiyueBook.DAL\obj\Debug\zhiyueBook.DAL.csprojResolveAssemblyReference.cache
+D:\NetWs\zhiyueBook\src\zhiyueBook.DAL\obj\Debug\zhiyueBook.DAL.dll
+D:\NetWs\zhiyueBook\src\zhiyueBook.DAL\obj\Debug\zhiyueBook.DAL.pdb
+D:\NetWs\zhiyueBook\bin\log4net.config

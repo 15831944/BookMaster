@@ -1,0 +1,15 @@
+D:\NetWs\zhiyueBook\src\zhiyueBook\bin\Debug\zhiyueBook.exe.config
+D:\NetWs\zhiyueBook\src\zhiyueBook\bin\Debug\zhiyueBook.exe
+D:\NetWs\zhiyueBook\src\zhiyueBook\bin\Debug\zhiyueBook.pdb
+D:\NetWs\zhiyueBook\src\bin\zhiyueBook.exe.config
+D:\NetWs\zhiyueBook\src\bin\zhiyueBook.exe
+D:\NetWs\zhiyueBook\src\bin\zhiyueBook.pdb
+D:\NetWs\zhiyueBook\bin\zhiyueBook.exe.config
+D:\NetWs\zhiyueBook\bin\zhiyueBook.exe
+D:\NetWs\zhiyueBook\bin\zhiyueBook.pdb
+D:\NetWs\zhiyueBook\src\zhiyueBook\obj\Debug\zhiyueBook.csprojResolveAssemblyReference.cache
+D:\NetWs\zhiyueBook\src\zhiyueBook\obj\Debug\zhiyueBook.Properties.Resources.resources
+D:\NetWs\zhiyueBook\src\zhiyueBook\obj\Debug\zhiyueBook.csproj.GenerateResource.Cache
+D:\NetWs\zhiyueBook\src\zhiyueBook\obj\Debug\zhiyueBook.exe
+D:\NetWs\zhiyueBook\src\zhiyueBook\obj\Debug\zhiyueBook.pdb
+D:\NetWs\zhiyueBook\bin\log4net.config

@@ -13,7 +13,7 @@ using zhiyueBook.DAL;
 
 namespace zhiyueBook.WinUI
 {
-    public partial class JyxxForm : Form
+    public partial class TjjyxxForm : Form
     {
         // 创建数据访问对象        
         private TjjyService srv = new TjjyService();
@@ -24,7 +24,7 @@ namespace zhiyueBook.WinUI
         // 传递的“统计借阅”
         private Tjjy qj_tjjy ;
 
-        public JyxxForm(PostTjjy postTjjy)
+        public TjjyxxForm(PostTjjy postTjjy)
         {
             InitializeComponent();
 

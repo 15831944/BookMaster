@@ -3,3 +3,7 @@ D:\NetWs\zhiyueBook\bin\zhiyueBook.Model.pdb
 D:\NetWs\zhiyueBook\src\zhiyueBook.Model\obj\Debug\zhiyueBook.Model.dll
 D:\NetWs\zhiyueBook\src\zhiyueBook.Model\obj\Debug\zhiyueBook.Model.pdb
 D:\NetWs\zhiyueBook\src\zhiyueBook.Model\obj\Debug\zhiyueBook.Model.csprojResolveAssemblyReference.cache
+D:\NetWs\BookMaster\bin\zhiyueBook.Model.dll
+D:\NetWs\BookMaster\bin\zhiyueBook.Model.pdb
+D:\NetWs\BookMaster\src\zhiyueBook.Model\obj\Debug\zhiyueBook.Model.dll
+D:\NetWs\BookMaster\src\zhiyueBook.Model\obj\Debug\zhiyueBook.Model.pdb

@@ -64,17 +64,20 @@ namespace zhiyueBook.WinUI
             //DataGridViewHelp.
         }
 
-        private void btnFind_Click(object sender, EventArgs e)
+        // 根据“关键字”查询
+        private void QueryByKeyWord()
         {
-            //txtKeyWord.Text = "";
-            //this.bQueryList = null;
-
             // 起止日期
             is_rq_start = this.dtpStart.Text;
             is_rq_end = this.dtpEnd.Text;
 
             this.ShowList();
             this.dgvMain.DataSource = bQueryList;
+        }
+
+        private void btnFind_Click(object sender, EventArgs e)
+        {
+            this.QueryByKeyWord();
         }
 
         /// <summary>
@@ -174,7 +177,7 @@ namespace zhiyueBook.WinUI
             curobj.ArgTjjy.SumBookPrice = Convert.ToDouble(dgvr.Cells["cSumBookPrice"].Value);
 
            
-            JyxxForm frm = new JyxxForm(curobj);
+            TjjyxxForm frm = new TjjyxxForm(curobj);
             //JyxxForm frm = new JyxxForm(val);
             frm.ShowDialog();
         }
@@ -218,6 +221,14 @@ namespace zhiyueBook.WinUI
             //    is_rq_start = System.DateTime.Now.Year.ToString() + "-01-01";
             //    is_rq_end = DateTime.Now.ToString("yyyy-MM-dd"); 
             //}
+        }
+
+        private void txtKeyWord_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                this.QueryByKeyWord();
+            }
         }
     }
 }

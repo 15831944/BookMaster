@@ -1,6 +1,6 @@
 ﻿namespace zhiyueBook.WinUI
 {
-    partial class JyxxForm
+    partial class TjjyxxForm
     {
         /// <summary>
         /// Required designer variable.

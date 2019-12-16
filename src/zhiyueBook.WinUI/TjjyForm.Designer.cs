@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlTop = new System.Windows.Forms.Panel();
             this.cboAllRq = new System.Windows.Forms.CheckBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -44,6 +44,7 @@
             this.lblState = new System.Windows.Forms.Label();
             this.lblAllCount = new System.Windows.Forms.Label();
             this.lblNotRtBooks = new System.Windows.Forms.Label();
+            this.lblSumRtBooks = new System.Windows.Forms.Label();
             this.lblSumBrBooks = new System.Windows.Forms.Label();
             this.cboStop = new System.Windows.Forms.CheckBox();
             this.btnFind = new System.Windows.Forms.Button();
@@ -61,7 +62,6 @@
             this.cSumBookPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cSumRtBooks = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cNotRtBooks = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lblSumRtBooks = new System.Windows.Forms.Label();
             this.pnlTop.SuspendLayout();
             this.pnlTopRight.SuspendLayout();
             this.pnlMain.SuspendLayout();
@@ -77,13 +77,12 @@
             this.pnlTop.Controls.Add(this.dtpStart);
             this.pnlTop.Controls.Add(this.txtKeyWord);
             this.pnlTop.Controls.Add(this.label1);
-            this.pnlTop.Controls.Add(this.pnlTopRight);
             this.pnlTop.Controls.Add(this.cboStop);
             this.pnlTop.Controls.Add(this.btnFind);
             this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTop.Location = new System.Drawing.Point(0, 0);
             this.pnlTop.Name = "pnlTop";
-            this.pnlTop.Size = new System.Drawing.Size(1261, 79);
+            this.pnlTop.Size = new System.Drawing.Size(918, 47);
             this.pnlTop.TabIndex = 0;
             // 
             // cboAllRq
@@ -140,6 +139,7 @@
             this.txtKeyWord.Name = "txtKeyWord";
             this.txtKeyWord.Size = new System.Drawing.Size(123, 21);
             this.txtKeyWord.TabIndex = 10;
+            this.txtKeyWord.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtKeyWord_KeyPress);
             // 
             // label1
             // 
@@ -159,9 +159,9 @@
             this.pnlTopRight.Controls.Add(this.lblSumRtBooks);
             this.pnlTopRight.Controls.Add(this.lblSumBrBooks);
             this.pnlTopRight.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlTopRight.Location = new System.Drawing.Point(0, 42);
+            this.pnlTopRight.Location = new System.Drawing.Point(0, 474);
             this.pnlTopRight.Name = "pnlTopRight";
-            this.pnlTopRight.Size = new System.Drawing.Size(1261, 37);
+            this.pnlTopRight.Size = new System.Drawing.Size(918, 37);
             this.pnlTopRight.TabIndex = 8;
             // 
             // lblState
@@ -196,6 +196,17 @@
             this.lblNotRtBooks.Size = new System.Drawing.Size(87, 20);
             this.lblNotRtBooks.TabIndex = 7;
             this.lblNotRtBooks.Text = "未还数：0本";
+            // 
+            // lblSumRtBooks
+            // 
+            this.lblSumRtBooks.AutoSize = true;
+            this.lblSumRtBooks.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblSumRtBooks.ForeColor = System.Drawing.Color.Blue;
+            this.lblSumRtBooks.Location = new System.Drawing.Point(977, 6);
+            this.lblSumRtBooks.Name = "lblSumRtBooks";
+            this.lblSumRtBooks.Size = new System.Drawing.Size(117, 20);
+            this.lblSumRtBooks.TabIndex = 6;
+            this.lblSumRtBooks.Text = "还书总数：100本";
             // 
             // lblSumBrBooks
             // 
@@ -233,10 +244,11 @@
             // pnlMain
             // 
             this.pnlMain.Controls.Add(this.dgvMain);
+            this.pnlMain.Controls.Add(this.pnlTopRight);
             this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlMain.Location = new System.Drawing.Point(0, 79);
+            this.pnlMain.Location = new System.Drawing.Point(0, 47);
             this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(1261, 510);
+            this.pnlMain.Size = new System.Drawing.Size(918, 511);
             this.pnlMain.TabIndex = 1;
             // 
             // dgvMain
@@ -264,7 +276,7 @@
             this.dgvMain.RowIndexEdit = 0;
             this.dgvMain.RowTemplate.Height = 23;
             this.dgvMain.ShowRowNumber = true;
-            this.dgvMain.Size = new System.Drawing.Size(1261, 510);
+            this.dgvMain.Size = new System.Drawing.Size(918, 474);
             this.dgvMain.TabIndex = 0;
             this.dgvMain.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvMain_CellMouseDoubleClick);
             this.dgvMain.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvMain_RowPostPaint);
@@ -272,8 +284,8 @@
             // cState
             // 
             this.cState.DataPropertyName = "State";
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.cState.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.cState.DefaultCellStyle = dataGridViewCellStyle9;
             this.cState.Frozen = true;
             this.cState.HeaderText = "状态";
             this.cState.Name = "cState";
@@ -291,8 +303,8 @@
             // cRcode
             // 
             this.cRcode.DataPropertyName = "Rcode";
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.cRcode.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.cRcode.DefaultCellStyle = dataGridViewCellStyle10;
             this.cRcode.Frozen = true;
             this.cRcode.HeaderText = "读者编号";
             this.cRcode.Name = "cRcode";
@@ -301,8 +313,8 @@
             // cName
             // 
             this.cName.DataPropertyName = "Rname";
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.cName.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.cName.DefaultCellStyle = dataGridViewCellStyle11;
             this.cName.Frozen = true;
             this.cName.HeaderText = "姓名";
             this.cName.Name = "cName";
@@ -342,9 +354,9 @@
             // cSumBookPrice
             // 
             this.cSumBookPrice.DataPropertyName = "sumBookPrice";
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Teal;
-            this.cSumBookPrice.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Teal;
+            this.cSumBookPrice.DefaultCellStyle = dataGridViewCellStyle12;
             this.cSumBookPrice.HeaderText = "借阅价值(元)";
             this.cSumBookPrice.Name = "cSumBookPrice";
             // 
@@ -362,22 +374,11 @@
             this.cNotRtBooks.Name = "cNotRtBooks";
             this.cNotRtBooks.Width = 80;
             // 
-            // lblSumRtBooks
-            // 
-            this.lblSumRtBooks.AutoSize = true;
-            this.lblSumRtBooks.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lblSumRtBooks.ForeColor = System.Drawing.Color.Blue;
-            this.lblSumRtBooks.Location = new System.Drawing.Point(977, 6);
-            this.lblSumRtBooks.Name = "lblSumRtBooks";
-            this.lblSumRtBooks.Size = new System.Drawing.Size(117, 20);
-            this.lblSumRtBooks.TabIndex = 6;
-            this.lblSumRtBooks.Text = "还书总数：100本";
-            // 
             // TjjyForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1261, 589);
+            this.ClientSize = new System.Drawing.Size(918, 558);
             this.Controls.Add(this.pnlMain);
             this.Controls.Add(this.pnlTop);
             this.Name = "TjjyForm";

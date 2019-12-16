@@ -65,7 +65,7 @@ namespace zhiyueBook.WinUI
         {
             if (!IsChildWinOpened("TjjyfxForm"))
             {
-                TjjyfxForm frm = new TjjyfxForm();
+                TjfxForm frm = new TjfxForm();
                 frm.MdiParent = this;
                 frm.WindowState = FormWindowState.Maximized;
                 frm.Show();

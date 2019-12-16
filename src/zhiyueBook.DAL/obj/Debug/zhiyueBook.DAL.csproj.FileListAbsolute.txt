@@ -4,3 +4,9 @@ D:\NetWs\zhiyueBook\src\zhiyueBook.DAL\obj\Debug\zhiyueBook.DAL.csprojResolveAss
 D:\NetWs\zhiyueBook\src\zhiyueBook.DAL\obj\Debug\zhiyueBook.DAL.dll
 D:\NetWs\zhiyueBook\src\zhiyueBook.DAL\obj\Debug\zhiyueBook.DAL.pdb
 D:\NetWs\zhiyueBook\bin\log4net.config
+D:\NetWs\BookMaster\bin\log4net.config
+D:\NetWs\BookMaster\bin\zhiyueBook.DAL.dll
+D:\NetWs\BookMaster\bin\zhiyueBook.DAL.pdb
+D:\NetWs\BookMaster\src\zhiyueBook.DAL\obj\Debug\zhiyueBook.DAL.csprojResolveAssemblyReference.cache
+D:\NetWs\BookMaster\src\zhiyueBook.DAL\obj\Debug\zhiyueBook.DAL.dll
+D:\NetWs\BookMaster\src\zhiyueBook.DAL\obj\Debug\zhiyueBook.DAL.pdb

@@ -16,7 +16,7 @@ using System.Windows.Forms.DataVisualization.Charting;
 
 namespace zhiyueBook.WinUI
 {
-    public partial class TjjyfxForm : Form
+    public partial class TjfxForm : Form
     {
         // 创建数据访问对象        
         private TjjyService srv = new TjjyService();
@@ -27,7 +27,7 @@ namespace zhiyueBook.WinUI
         // 保存查询结果，作为缓存，后面修改和删除的时候都要使用。
         private List<Tjjyfx> queryList = null;
 
-        public TjjyfxForm()
+        public TjfxForm()
         {
             InitializeComponent();
 

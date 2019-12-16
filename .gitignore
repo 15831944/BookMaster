@@ -1,0 +1,5 @@
+bin/data/Book1.mdb
+bin/data/Book.mdb
+*.bak
+*.pdb
+*.vshost.*

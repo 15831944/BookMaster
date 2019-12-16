@@ -8,3 +8,7 @@ D:\NetWs\zhiyueBook\src\RiziFrame.Utility\obj\Debug\RiziFrame.Utility.dll
 D:\NetWs\zhiyueBook\src\RiziFrame.Utility\obj\Debug\RiziFrame.Utility.pdb
 D:\NetWs\bin\log4net.config
 D:\NetWs\zhiyueBook\src\RiziFrame.Utility\obj\Debug\RiziFrame.Utility.csprojResolveAssemblyReference.cache
+D:\NetWs\BookMaster\src\RiziFrame.Utility\obj\Debug\RiziFrame.Utility.Ui.BaseForm.resources
+D:\NetWs\BookMaster\src\RiziFrame.Utility\obj\Debug\RiziFrame.Utility.csproj.GenerateResource.Cache
+D:\NetWs\BookMaster\src\RiziFrame.Utility\obj\Debug\RiziFrame.Utility.dll
+D:\NetWs\BookMaster\src\RiziFrame.Utility\obj\Debug\RiziFrame.Utility.pdb

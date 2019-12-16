@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cboAllRq = new System.Windows.Forms.CheckBox();
             this.txtKeyWord = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -107,7 +107,7 @@
             this.pnlTopRight.Controls.Add(this.lblSumBookPriceZg);
             this.pnlTopRight.Controls.Add(this.lblSumBookPrice);
             this.pnlTopRight.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlTopRight.Location = new System.Drawing.Point(0, 42);
+            this.pnlTopRight.Location = new System.Drawing.Point(0, 547);
             this.pnlTopRight.Name = "pnlTopRight";
             this.pnlTopRight.Size = new System.Drawing.Size(1276, 37);
             this.pnlTopRight.TabIndex = 8;
@@ -207,7 +207,7 @@
             this.dgvMain.RowIndexEdit = 0;
             this.dgvMain.RowTemplate.Height = 23;
             this.dgvMain.ShowRowNumber = true;
-            this.dgvMain.Size = new System.Drawing.Size(1276, 548);
+            this.dgvMain.Size = new System.Drawing.Size(1276, 547);
             this.dgvMain.TabIndex = 0;
             this.dgvMain.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMain_CellContentClick);
             this.dgvMain.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvMain_CellMouseDoubleClick);
@@ -216,8 +216,8 @@
             // cState
             // 
             this.cState.DataPropertyName = "State";
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.cState.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.cState.DefaultCellStyle = dataGridViewCellStyle1;
             this.cState.Frozen = true;
             this.cState.HeaderText = "状态";
             this.cState.Name = "cState";
@@ -227,8 +227,8 @@
             // cBookCode
             // 
             this.cBookCode.DataPropertyName = "BookCode";
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.cBookCode.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.cBookCode.DefaultCellStyle = dataGridViewCellStyle2;
             this.cBookCode.Frozen = true;
             this.cBookCode.HeaderText = "图书编号";
             this.cBookCode.Name = "cBookCode";
@@ -237,8 +237,8 @@
             // cName
             // 
             this.cName.DataPropertyName = "Name";
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.cName.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.cName.DefaultCellStyle = dataGridViewCellStyle3;
             this.cName.Frozen = true;
             this.cName.HeaderText = "图书名称";
             this.cName.Name = "cName";
@@ -343,10 +343,11 @@
             // pnlMain
             // 
             this.pnlMain.Controls.Add(this.dgvMain);
+            this.pnlMain.Controls.Add(this.pnlTopRight);
             this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlMain.Location = new System.Drawing.Point(0, 79);
+            this.pnlMain.Location = new System.Drawing.Point(0, 43);
             this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(1276, 548);
+            this.pnlMain.Size = new System.Drawing.Size(1276, 584);
             this.pnlMain.TabIndex = 3;
             // 
             // btnFind
@@ -366,13 +367,12 @@
             this.pnlTop.Controls.Add(this.cboAllRq);
             this.pnlTop.Controls.Add(this.txtKeyWord);
             this.pnlTop.Controls.Add(this.label1);
-            this.pnlTop.Controls.Add(this.pnlTopRight);
             this.pnlTop.Controls.Add(this.cboStop);
             this.pnlTop.Controls.Add(this.btnFind);
             this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTop.Location = new System.Drawing.Point(0, 0);
             this.pnlTop.Name = "pnlTop";
-            this.pnlTop.Size = new System.Drawing.Size(1276, 79);
+            this.pnlTop.Size = new System.Drawing.Size(1276, 43);
             this.pnlTop.TabIndex = 2;
             // 
             // label2

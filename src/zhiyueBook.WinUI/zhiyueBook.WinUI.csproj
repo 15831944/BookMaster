@@ -51,11 +51,11 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="JyxxForm.cs">
+    <Compile Include="TjjyxxForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="JyxxForm.Designer.cs">
-      <DependentUpon>JyxxForm.cs</DependentUpon>
+    <Compile Include="TjjyxxForm.Designer.cs">
+      <DependentUpon>TjjyxxForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -77,11 +77,11 @@
     <Compile Include="TjjyForm.Designer.cs">
       <DependentUpon>TjjyForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="TjjyfxForm.cs">
+    <Compile Include="TjfxForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TjjyfxForm.Designer.cs">
-      <DependentUpon>TjjyfxForm.cs</DependentUpon>
+    <Compile Include="TjfxForm.Designer.cs">
+      <DependentUpon>TjfxForm.cs</DependentUpon>
     </Compile>
     <Compile Include="TjtsForm.cs">
       <SubType>Form</SubType>
@@ -101,8 +101,8 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="JyxxForm.resx">
-      <DependentUpon>JyxxForm.cs</DependentUpon>
+    <EmbeddedResource Include="TjjyxxForm.resx">
+      <DependentUpon>TjjyxxForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -113,8 +113,8 @@
     <EmbeddedResource Include="TjjyForm.resx">
       <DependentUpon>TjjyForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TjjyfxForm.resx">
-      <DependentUpon>TjjyfxForm.cs</DependentUpon>
+    <EmbeddedResource Include="TjfxForm.resx">
+      <DependentUpon>TjfxForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TjtsForm.resx">
       <DependentUpon>TjtsForm.cs</DependentUpon>

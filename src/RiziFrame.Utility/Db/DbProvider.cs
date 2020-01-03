@@ -40,26 +40,6 @@ namespace RiziFrame.Utility.Db
 
                 return val; 
             }
-        }
-
-
-
-        //public DbProvider()
-        //{
-        //    dbProviderString = ""; ConfigurationManager.AppSettings["DbProvider"].ToString();
-
-        //    switch (dbProviderString.ToLower())
-        //    {
-        //        case "oledb":
-        //            connectionString = ConfigurationManager.ConnectionStrings["connectStringOledb"].ToString();
-        //            break;
-        //        case "sqlite":
-        //            connectionString = ConfigurationManager.ConnectionStrings["connectStringSqlite"].ToString();
-        //            break;
-        //        default:
-        //            break;
-        //    }
-        //}
-    
+        }    
     }
 }

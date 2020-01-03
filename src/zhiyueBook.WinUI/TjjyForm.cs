@@ -1,5 +1,4 @@
-﻿using RiziFrame.Utility.Uc;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,9 +6,11 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using RiziFrame.Utility.Uc;
 using RiziFrame.Utility.Db;
 using zhiyueBook.Model;
 using zhiyueBook.DAL;
+using RiziFrame.Utility.Common;
 
 namespace zhiyueBook.WinUI
 {
@@ -53,15 +54,15 @@ namespace zhiyueBook.WinUI
             this.dtpStart.Text = is_rq_start;
             this.dtpEnd.Text = is_rq_end;
             
-            //this.InitCbb();
+            this.InitCbb();
             this.ShowList();
             this.dgvMain.DataSource = bQueryList;
            
         }
 
-        private void Init()
+        private void InitCbb()
         { 
-            //DataGridViewHelp.
+            ControlHelper.CbbSetDateArea(cbbFindRQ, this.dtpStart, this.dtpEnd);
         }
 
         // 根据“关键字”查询
@@ -184,31 +185,7 @@ namespace zhiyueBook.WinUI
 
         private void dgvMain_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
-            DataGridViewRow dgRow = this.dgvMain.Rows[e.RowIndex];
-            Color stopColor = Color.FromArgb(255, 127, 80);  // 停用记录背景色
-            Color normalColor = Color.FromArgb(157, 255, 100);  // 正常背景色
-            Color expireColor = Color.Yellow;  // 快到期背景色
-            
-
-            //判断；是否是停用
-            if ("正常".Equals(dgRow.Cells["cState"].Value))
-            {
-                //将这行的背景色设置成红色
-                //dgRow.DefaultCellStyle.BackColor = normalColor;
-                dgRow.Cells["cState"].Style.BackColor = normalColor;
-            }
-            if ("即将过期".Equals(dgRow.Cells["cState"].Value))
-            {
-                //将这行的背景色设置成红色                
-                dgRow.Cells["cState"].Style.BackColor = expireColor;
-                dgRow.Cells["cSyDays"].Style.BackColor = expireColor;
-            }
-            if ("停用".Equals(dgRow.Cells["cState"].Value))
-            {
-                //将这行的背景色设置成红色                
-                dgRow.Cells["cState"].Style.BackColor = stopColor;
-                dgRow.Cells["cSyDays"].Style.BackColor = stopColor;
-            }
+            DataGridViewColumnHelper.ColStateSetBgc(this.dgvMain, e);
         }
 
         private void cboAllRq_CheckedChanged(object sender, EventArgs e)

@@ -422,7 +422,7 @@
             this.pnlTab2_Top.Size = new System.Drawing.Size(962, 49);
             this.pnlTab2_Top.TabIndex = 0;
             // 
-            // JyxxForm
+            // TjjyxxForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -433,9 +433,9 @@
             this.Controls.Add(this.pnlFooter);
             this.Controls.Add(this.pnlTop);
             this.MaximizeBox = false;
-            this.Name = "JyxxForm";
+            this.Name = "TjjyxxForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "借阅信息";
+            this.Text = "借阅详细信息";
             ((System.ComponentModel.ISupportInitialize)(this.dgvMain)).EndInit();
             this.pnlFooter.ResumeLayout(false);
             this.pnlFooter.PerformLayout();

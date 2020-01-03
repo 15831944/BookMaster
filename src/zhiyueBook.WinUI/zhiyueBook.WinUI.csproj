@@ -51,6 +51,47 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="JcBookForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JcBookForm.Designer.cs">
+      <DependentUpon>JcBookForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DictDataForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DictDataForm.Designer.cs">
+      <DependentUpon>DictDataForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DictDataXxFormcs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DictDataXxFormcs.Designer.cs">
+      <DependentUpon>DictDataXxFormcs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JcReaderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JcReaderForm.Designer.cs">
+      <DependentUpon>JcReaderForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JcReaderXxForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JcReaderXxForm.Designer.cs">
+      <DependentUpon>JcReaderXxForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JhtsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JhtsForm.Designer.cs">
+      <DependentUpon>JhtsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="TjjyxxForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,10 +137,38 @@
       <DependentUpon>TjtsxxFrom.cs</DependentUpon>
     </Compile>
     <Compile Include="PostTjts.cs" />
+    <Compile Include="DictTypeXxForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DictTypeXxForm.Designer.cs">
+      <DependentUpon>DictTypeXxForm.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JcBookForm.resx">
+      <DependentUpon>JcBookForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DictDataForm.resx">
+      <DependentUpon>DictDataForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DictDataXxFormcs.resx">
+      <DependentUpon>DictDataXxFormcs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JcReaderForm.resx">
+      <DependentUpon>JcReaderForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JcReaderXxForm.resx">
+      <DependentUpon>JcReaderXxForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JhtsForm.resx">
+      <DependentUpon>JhtsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="TjjyxxForm.resx">
       <DependentUpon>TjjyxxForm.cs</DependentUpon>
@@ -121,6 +190,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TjtsxxFrom.resx">
       <DependentUpon>TjtsxxFrom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DictTypeXxForm.resx">
+      <DependentUpon>DictTypeXxForm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

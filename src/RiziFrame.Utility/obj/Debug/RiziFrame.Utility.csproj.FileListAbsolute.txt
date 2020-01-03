@@ -12,3 +12,6 @@ D:\NetWs\BookMaster\src\RiziFrame.Utility\obj\Debug\RiziFrame.Utility.Ui.BaseFor
 D:\NetWs\BookMaster\src\RiziFrame.Utility\obj\Debug\RiziFrame.Utility.csproj.GenerateResource.Cache
 D:\NetWs\BookMaster\src\RiziFrame.Utility\obj\Debug\RiziFrame.Utility.dll
 D:\NetWs\BookMaster\src\RiziFrame.Utility\obj\Debug\RiziFrame.Utility.pdb
+D:\NetWs\BookMaster\src\RiziFrame.Utility\obj\Debug\RiziFrame.Utility.Uc.BtnGrp1.resources
+D:\NetWs\BookMaster\src\RiziFrame.Utility\obj\Debug\RiziFrame.Utility.Properties.Resources.resources
+D:\NetWs\BookMaster\src\RiziFrame.Utility\obj\Debug\RiziFrame.Utility.Uc.BtnGrp2.resources

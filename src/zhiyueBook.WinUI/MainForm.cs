@@ -17,11 +17,7 @@ namespace zhiyueBook.WinUI
             InitializeComponent();
         }
 
-        private void tsBtn_Jytj_Click(object sender, EventArgs e)
-        {
-            this.FrmJytj();            
-        }
-
+        #region 借阅统计
         private void tsmi_Jytj_Click(object sender, EventArgs e)
         {
             this.FrmJytj();
@@ -40,6 +36,7 @@ namespace zhiyueBook.WinUI
                 frm.Show();
             }
         }
+        #endregion
 
         private void tsmi_Test1_Click(object sender, EventArgs e)
         {
@@ -97,12 +94,59 @@ namespace zhiyueBook.WinUI
             return isOpen;
         }
 
+        #region 基础数据
         /// <summary>
-        /// 图书统计
+        /// 打开“基础数据"窗口
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void tsBtn_Tstj_Click(object sender, EventArgs e)
+        private void FrmJcsj()
+        {
+            if (!IsChildWinOpened("JcJcsjForm"))
+            {
+                DictDataForm frm = new DictDataForm();
+                frm.MdiParent = this;
+                frm.WindowState = FormWindowState.Maximized;
+                frm.Show();
+            }
+        }
+
+        private void tsmiJcsj_Click(object sender, EventArgs e)
+        {
+            this.FrmJcsj();
+        }
+        #endregion
+
+        #region 借还图书
+        private void tsmi_jhts_Click(object sender, EventArgs e)
+        {
+            this.FrmJhts();
+        }
+
+        /// <summary>
+        /// 打开“借还图书"窗口
+        /// </summary>
+        private void FrmJhts()
+        {
+            if (!IsChildWinOpened("JhtsForm"))
+            {
+                JhtsForm frm = new JhtsForm();
+                frm.MdiParent = this;
+                frm.WindowState = FormWindowState.Maximized;
+                frm.Show();
+            }
+        }
+        #endregion
+
+        #region 图书统计
+
+        private void tsmi_Tstj_Click(object sender, EventArgs e)
+        {
+            this.FrmTstj();
+        }
+
+        /// <summary>
+        /// 打开“图书统计"窗口
+        /// </summary>
+        private void FrmTstj()
         {
             if (!IsChildWinOpened("TjtsForm"))
             {
@@ -110,7 +154,52 @@ namespace zhiyueBook.WinUI
                 frm.MdiParent = this;
                 frm.WindowState = FormWindowState.Maximized;
                 frm.Show();
-            }            
+            }
         }
+        #endregion
+        
+        #region 读者管理
+        private void tsmiReader_Click(object sender, EventArgs e)
+        {
+            this.FrmJcReader();
+        }
+
+        /// <summary>
+        /// 打开“读者管理"窗口
+        /// </summary>
+        private void FrmJcReader()
+        {
+            if (!IsChildWinOpened("JcReaderForm"))
+            {
+                JcReaderForm frm = new JcReaderForm();
+                frm.MdiParent = this;
+                frm.WindowState = FormWindowState.Maximized;
+                frm.Show();
+            }
+        }
+        #endregion
+
+        #region 图书管理
+        private void tsmiBook_Click(object sender, EventArgs e)
+        {
+            this.FrmJcBook();
+        }
+
+        /// <summary>
+        /// 打开“图书管理"窗口
+        /// </summary>
+        private void FrmJcBook()
+        {
+            if (!IsChildWinOpened("JcBookForm"))
+            {
+                JcBookForm frm = new JcBookForm();
+                frm.MdiParent = this;
+                frm.WindowState = FormWindowState.Maximized;
+                frm.Show();
+            }
+        }
+        #endregion
+
+        
     }
 }

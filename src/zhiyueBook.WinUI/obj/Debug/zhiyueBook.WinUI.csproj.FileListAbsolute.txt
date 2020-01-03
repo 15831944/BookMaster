@@ -30,3 +30,11 @@ D:\NetWs\BookMaster\src\zhiyueBook.WinUI\obj\Debug\zhiyueBook.WinUI.dll
 D:\NetWs\BookMaster\src\zhiyueBook.WinUI\obj\Debug\zhiyueBook.WinUI.pdb
 D:\NetWs\BookMaster\src\zhiyueBook.WinUI\obj\Debug\zhiyueBook.WinUI.TjjyxxForm.resources
 D:\NetWs\BookMaster\src\zhiyueBook.WinUI\obj\Debug\zhiyueBook.WinUI.TjfxForm.resources
+D:\NetWs\BookMaster\src\zhiyueBook.WinUI\obj\Debug\zhiyueBook.WinUI.JhtsForm.resources
+D:\NetWs\BookMaster\src\zhiyueBook.WinUI\obj\Debug\zhiyueBook.WinUI.JcBookForm.resources
+D:\NetWs\BookMaster\src\zhiyueBook.WinUI\obj\Debug\zhiyueBook.WinUI.JcReaderForm.resources
+D:\NetWs\BookMaster\src\zhiyueBook.WinUI\obj\Debug\zhiyueBook.WinUI.Properties.Resources.resources
+D:\NetWs\BookMaster\src\zhiyueBook.WinUI\obj\Debug\zhiyueBook.WinUI.JcReaderXxForm.resources
+D:\NetWs\BookMaster\src\zhiyueBook.WinUI\obj\Debug\zhiyueBook.WinUI.DictDataXxFormcs.resources
+D:\NetWs\BookMaster\src\zhiyueBook.WinUI\obj\Debug\zhiyueBook.WinUI.DictTypeXxForm.resources
+D:\NetWs\BookMaster\src\zhiyueBook.WinUI\obj\Debug\zhiyueBook.WinUI.DictDataForm.resources

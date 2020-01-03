@@ -28,11 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlTop = new System.Windows.Forms.Panel();
+            this.cbbFindRQ = new System.Windows.Forms.ComboBox();
             this.cboAllRq = new System.Windows.Forms.CheckBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -40,14 +41,14 @@
             this.dtpStart = new System.Windows.Forms.DateTimePicker();
             this.txtKeyWord = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.cboStop = new System.Windows.Forms.CheckBox();
+            this.btnFind = new System.Windows.Forms.Button();
             this.pnlTopRight = new System.Windows.Forms.Panel();
             this.lblState = new System.Windows.Forms.Label();
             this.lblAllCount = new System.Windows.Forms.Label();
             this.lblNotRtBooks = new System.Windows.Forms.Label();
             this.lblSumRtBooks = new System.Windows.Forms.Label();
             this.lblSumBrBooks = new System.Windows.Forms.Label();
-            this.cboStop = new System.Windows.Forms.CheckBox();
-            this.btnFind = new System.Windows.Forms.Button();
             this.pnlMain = new System.Windows.Forms.Panel();
             this.dgvMain = new RiziFrame.Utility.Uc.DataGridViewEx();
             this.cState = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -70,6 +71,7 @@
             // 
             // pnlTop
             // 
+            this.pnlTop.Controls.Add(this.cbbFindRQ);
             this.pnlTop.Controls.Add(this.cboAllRq);
             this.pnlTop.Controls.Add(this.label3);
             this.pnlTop.Controls.Add(this.label2);
@@ -82,8 +84,16 @@
             this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTop.Location = new System.Drawing.Point(0, 0);
             this.pnlTop.Name = "pnlTop";
-            this.pnlTop.Size = new System.Drawing.Size(918, 47);
+            this.pnlTop.Size = new System.Drawing.Size(948, 47);
             this.pnlTop.TabIndex = 0;
+            // 
+            // cbbFindRQ
+            // 
+            this.cbbFindRQ.FormattingEnabled = true;
+            this.cbbFindRQ.Location = new System.Drawing.Point(283, 12);
+            this.cbbFindRQ.Name = "cbbFindRQ";
+            this.cbbFindRQ.Size = new System.Drawing.Size(74, 20);
+            this.cbbFindRQ.TabIndex = 16;
             // 
             // cboAllRq
             // 
@@ -100,7 +110,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(418, 16);
+            this.label3.Location = new System.Drawing.Point(532, 16);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(11, 12);
             this.label3.TabIndex = 14;
@@ -109,7 +119,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(227, 16);
+            this.label2.Location = new System.Drawing.Point(362, 16);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(65, 12);
             this.label2.TabIndex = 13;
@@ -119,18 +129,18 @@
             // 
             this.dtpEnd.CustomFormat = "yyyy-MM-dd";
             this.dtpEnd.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpEnd.Location = new System.Drawing.Point(439, 12);
+            this.dtpEnd.Location = new System.Drawing.Point(553, 12);
             this.dtpEnd.Name = "dtpEnd";
-            this.dtpEnd.Size = new System.Drawing.Size(144, 21);
+            this.dtpEnd.Size = new System.Drawing.Size(98, 21);
             this.dtpEnd.TabIndex = 12;
             // 
             // dtpStart
             // 
             this.dtpStart.CustomFormat = "yyyy-MM-dd";
             this.dtpStart.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpStart.Location = new System.Drawing.Point(292, 12);
+            this.dtpStart.Location = new System.Drawing.Point(427, 12);
             this.dtpStart.Name = "dtpStart";
-            this.dtpStart.Size = new System.Drawing.Size(122, 21);
+            this.dtpStart.Size = new System.Drawing.Size(98, 21);
             this.dtpStart.TabIndex = 11;
             // 
             // txtKeyWord
@@ -150,6 +160,28 @@
             this.label1.TabIndex = 9;
             this.label1.Text = "姓名或拼音：";
             // 
+            // cboStop
+            // 
+            this.cboStop.AutoSize = true;
+            this.cboStop.Checked = true;
+            this.cboStop.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cboStop.Location = new System.Drawing.Point(830, 14);
+            this.cboStop.Name = "cboStop";
+            this.cboStop.Size = new System.Drawing.Size(96, 16);
+            this.cboStop.TabIndex = 1;
+            this.cboStop.Text = "显示停用读者";
+            this.cboStop.UseVisualStyleBackColor = true;
+            // 
+            // btnFind
+            // 
+            this.btnFind.Location = new System.Drawing.Point(662, 7);
+            this.btnFind.Name = "btnFind";
+            this.btnFind.Size = new System.Drawing.Size(97, 31);
+            this.btnFind.TabIndex = 0;
+            this.btnFind.Text = "查询(&F)";
+            this.btnFind.UseVisualStyleBackColor = true;
+            this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
+            // 
             // pnlTopRight
             // 
             this.pnlTopRight.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -161,7 +193,7 @@
             this.pnlTopRight.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnlTopRight.Location = new System.Drawing.Point(0, 474);
             this.pnlTopRight.Name = "pnlTopRight";
-            this.pnlTopRight.Size = new System.Drawing.Size(918, 37);
+            this.pnlTopRight.Size = new System.Drawing.Size(948, 37);
             this.pnlTopRight.TabIndex = 8;
             // 
             // lblState
@@ -219,28 +251,6 @@
             this.lblSumBrBooks.TabIndex = 5;
             this.lblSumBrBooks.Text = "借阅总数：100本";
             // 
-            // cboStop
-            // 
-            this.cboStop.AutoSize = true;
-            this.cboStop.Checked = true;
-            this.cboStop.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cboStop.Location = new System.Drawing.Point(830, 14);
-            this.cboStop.Name = "cboStop";
-            this.cboStop.Size = new System.Drawing.Size(96, 16);
-            this.cboStop.TabIndex = 1;
-            this.cboStop.Text = "显示停用读者";
-            this.cboStop.UseVisualStyleBackColor = true;
-            // 
-            // btnFind
-            // 
-            this.btnFind.Location = new System.Drawing.Point(618, 7);
-            this.btnFind.Name = "btnFind";
-            this.btnFind.Size = new System.Drawing.Size(97, 31);
-            this.btnFind.TabIndex = 0;
-            this.btnFind.Text = "查询(&F)";
-            this.btnFind.UseVisualStyleBackColor = true;
-            this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
-            // 
             // pnlMain
             // 
             this.pnlMain.Controls.Add(this.dgvMain);
@@ -248,7 +258,7 @@
             this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlMain.Location = new System.Drawing.Point(0, 47);
             this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(918, 511);
+            this.pnlMain.Size = new System.Drawing.Size(948, 511);
             this.pnlMain.TabIndex = 1;
             // 
             // dgvMain
@@ -276,7 +286,7 @@
             this.dgvMain.RowIndexEdit = 0;
             this.dgvMain.RowTemplate.Height = 23;
             this.dgvMain.ShowRowNumber = true;
-            this.dgvMain.Size = new System.Drawing.Size(918, 474);
+            this.dgvMain.Size = new System.Drawing.Size(948, 474);
             this.dgvMain.TabIndex = 0;
             this.dgvMain.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvMain_CellMouseDoubleClick);
             this.dgvMain.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvMain_RowPostPaint);
@@ -284,8 +294,8 @@
             // cState
             // 
             this.cState.DataPropertyName = "State";
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.cState.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.cState.DefaultCellStyle = dataGridViewCellStyle5;
             this.cState.Frozen = true;
             this.cState.HeaderText = "状态";
             this.cState.Name = "cState";
@@ -303,8 +313,8 @@
             // cRcode
             // 
             this.cRcode.DataPropertyName = "Rcode";
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.cRcode.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.cRcode.DefaultCellStyle = dataGridViewCellStyle6;
             this.cRcode.Frozen = true;
             this.cRcode.HeaderText = "读者编号";
             this.cRcode.Name = "cRcode";
@@ -313,8 +323,8 @@
             // cName
             // 
             this.cName.DataPropertyName = "Rname";
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.cName.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.cName.DefaultCellStyle = dataGridViewCellStyle7;
             this.cName.Frozen = true;
             this.cName.HeaderText = "姓名";
             this.cName.Name = "cName";
@@ -354,9 +364,9 @@
             // cSumBookPrice
             // 
             this.cSumBookPrice.DataPropertyName = "sumBookPrice";
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Teal;
-            this.cSumBookPrice.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Teal;
+            this.cSumBookPrice.DefaultCellStyle = dataGridViewCellStyle8;
             this.cSumBookPrice.HeaderText = "借阅价值(元)";
             this.cSumBookPrice.Name = "cSumBookPrice";
             // 
@@ -378,10 +388,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(918, 558);
+            this.ClientSize = new System.Drawing.Size(948, 558);
             this.Controls.Add(this.pnlMain);
             this.Controls.Add(this.pnlTop);
             this.Name = "TjjyForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "借阅统计";
             this.pnlTop.ResumeLayout(false);
             this.pnlTop.PerformLayout();
@@ -426,5 +437,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cSumRtBooks;
         private System.Windows.Forms.DataGridViewTextBoxColumn cNotRtBooks;
         private System.Windows.Forms.Label lblSumRtBooks;
+        private System.Windows.Forms.ComboBox cbbFindRQ;
     }
 }

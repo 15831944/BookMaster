@@ -40,8 +40,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DictService.cs" />
+    <Compile Include="ICommonCURD.cs" />
+    <Compile Include="JcBookService.cs" />
+    <Compile Include="JcReaderService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TjjyService.cs" />
+    <Compile Include="DictTypeService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\RiziFrame.Utility\RiziFrame.Utility.csproj">

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Data.OleDb;
 using System.Linq;
@@ -10,15 +11,17 @@ namespace RiziFrame.Utility.Db
 {
     public class OleDbHelper
     {
-        public OleDbHelper() { }
 
         private static OleDbConnection Conn;
         private static OleDbCommand Cmd;
         private static OleDbDataAdapter Da;
         private static DataSet Ds;
         private static DataTable Dt;
-        private static string strConn = "Provider=Microsoft.Jet.OleDb.4.0;Data Source=c:\\a.mdb";
-                
+
+        public static string connectionString = "Provider=Microsoft.Jet.OleDb.4.0;" 
+            + ConfigurationManager.ConnectionStrings["connectStringOledb"].ToString();
+
+        public OleDbHelper(){ }              
 
         /// <summary>
         /// 设置execl文件连接
@@ -26,8 +29,7 @@ namespace RiziFrame.Utility.Db
         /// <param name="FileName"></param>
         public static void SetConn(string FileName)
         {
-            strConn = "Provider=Microsoft.Jet.OleDb.4.0;" + FileName;
-            //strConn = "Provider=Microsoft.Jet.OleDb.4.0;Data Source=" + FileName;
+            connectionString = "Provider=Microsoft.Jet.OleDb.4.0;" + FileName;
         }
 
         /// <summary>  
@@ -37,9 +39,10 @@ namespace RiziFrame.Utility.Db
         {
             Conn = new OleDbConnection();
             Cmd = new OleDbCommand();
+
             if (Conn.State.Equals(ConnectionState.Closed))
             {
-                Conn.ConnectionString = strConn;
+                Conn.ConnectionString = connectionString;
                 Conn.Open();
             }
             Cmd.Connection = Conn;
@@ -50,10 +53,10 @@ namespace RiziFrame.Utility.Db
         /// </summary>  
         public static void TestConn()
         {
-            Conn = new OleDbConnection();            
+            Conn = new OleDbConnection();
             if (Conn.State.Equals(ConnectionState.Closed))
             {
-                Conn.ConnectionString = strConn;
+                Conn.ConnectionString = connectionString;
 
                 try
                 {
@@ -63,18 +66,18 @@ namespace RiziFrame.Utility.Db
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("数据库连接失败！\n" + ex.Message, "提示", 
+                    MessageBox.Show("数据库连接失败！\n" + ex.Message, "提示",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                     //throw;
                 }
                 finally
                 {
                     Conn.Close();
-                }                                
+                }
             }
-            
+
         }
-        
+
         /// <summary>  
         /// 关闭连接  
         /// </summary>  
@@ -109,7 +112,7 @@ namespace RiziFrame.Utility.Db
                 Close();
             }
         }
-        
+
         /// <summary>  
         /// DataSet类  
         /// </summary>  
@@ -165,7 +168,7 @@ namespace RiziFrame.Utility.Db
         }
 
         /// <summary>  
-        /// 执行 ExecuteScalar  
+        /// 执行 ExecuteScalar ,用于count, sum等 
         /// </summary>  
         /// <param name="sql">SQL语句</param>  
         /// <returns></returns>  
@@ -196,7 +199,7 @@ namespace RiziFrame.Utility.Db
         /// <returns>OleDbDataReader</returns>
         public static OleDbDataReader ExecuteReader(string strSQL)
         {
-            OleDbConnection connection = new OleDbConnection(strConn);
+            OleDbConnection connection = new OleDbConnection(connectionString);
             OleDbCommand cmd = new OleDbCommand(strSQL, connection);
             try
             {
@@ -210,5 +213,37 @@ namespace RiziFrame.Utility.Db
             }
 
         }
-    }  
+
+
+        /// <summary>
+        /// 执行一条计算查询结果语句，返回查询结果（object）。
+        /// </summary>
+        /// <param name="SQLString">计算查询结果语句</param>
+        /// <returns>查询结果（object）</returns>
+        public static object GetSingle(string SQLString)
+        {
+            try
+            {
+                Open();
+                Cmd.CommandText = SQLString;
+                object obj = Cmd.ExecuteScalar();
+                if ((Object.Equals(obj, null)) || (Object.Equals(obj, System.DBNull.Value)))
+                {
+                    return null;
+                }
+                else
+                {
+                    return obj;
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message, e);
+            }
+            finally
+            {
+                Close();
+            }
+        }
+    }
 }

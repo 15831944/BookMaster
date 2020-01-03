@@ -7,3 +7,5 @@ D:\NetWs\BookMaster\bin\zhiyueBook.Model.dll
 D:\NetWs\BookMaster\bin\zhiyueBook.Model.pdb
 D:\NetWs\BookMaster\src\zhiyueBook.Model\obj\Debug\zhiyueBook.Model.dll
 D:\NetWs\BookMaster\src\zhiyueBook.Model\obj\Debug\zhiyueBook.Model.pdb
+D:\NetWs\BookMaster\src\zhiyueBook.Model\obj\Debug\zhiyueBook.Model.csprojResolveAssemblyReference.cache
+D:\NetWs\BookMaster\bin\log4net.config

@@ -13,10 +13,10 @@ namespace RiziFrame.Utility.Db
         {
             //MessageBox.Show(DbProvider.dbProviderString + "\n"
             //    + DbProvider.connectionString, "提示");
-            DbProvider dbProvider = new DbProvider ();
+            //DbProvider dbProvider = new DbProvider ();
 
-            MessageBox.Show(dbProvider.TypeName + "\n"
-                + dbProvider.ConnectionString, "提示");
+            //MessageBox.Show(dbProvider.TypeName + "\n"
+            //    + dbProvider.ConnectionString, "提示");
         }
     }
 }

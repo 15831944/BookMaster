@@ -41,7 +41,7 @@ namespace RiziFrame.Utility.Uc
                 dgRow.Cells["cState"].Style.BackColor = expireColor;
                 dgRow.Cells["cSyDays"].Style.BackColor = expireColor;
             }
-            if ("停用".Equals(dgRow.Cells["cState"].Value))
+            if ("停用".Equals(dgRow.Cells["cState"].Value) || "过期".Equals(dgRow.Cells["cState"].Value))
             {
                 //将这行的背景色设置成红色                
                 dgRow.Cells["cState"].Style.BackColor = stopColor;

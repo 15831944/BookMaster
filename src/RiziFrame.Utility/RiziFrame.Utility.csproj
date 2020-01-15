@@ -54,6 +54,7 @@
     <Compile Include="Common\FormHelper.cs" />
     <Compile Include="Common\LogHelper.cs" />
     <Compile Include="Common\PostArgHelper.cs" />
+    <Compile Include="Common\StringHelper.cs" />
     <Compile Include="Db\DbHelper.cs" />
     <Compile Include="Db\IDbHelper.cs" />
     <Compile Include="Db\DbProvider.cs" />

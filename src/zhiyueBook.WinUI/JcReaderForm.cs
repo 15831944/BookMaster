@@ -18,13 +18,15 @@ namespace zhiyueBook.WinUI
     public partial class JcReaderForm : Form
     {
         // 创建数据访问服务        
-        private ICommonCURD<JcReader> srv = new JcReaderService();
+        private JcReaderService srv = new JcReaderService();
 
-        // 保存查询结果，作为缓存，后面修改和删除的时候都要使用。
-        private List<JcReader> queryList = null;
-        //private BindingCollection<JcReader> bcQueryList = null;  // 这个可以支持"列头排序"
-        private BindingList<JcReader> bQueryList = null;      
-
+        private BindingCollection<JcReaderModel> mySource = null;
+        private List<JcReaderModel> listQuery = null;
+        public List<JcReaderModel> ListQuery
+        {
+            get { return listQuery; }
+            set { listQuery = value; }
+        }
 
         public JcReaderForm()
         {
@@ -39,10 +41,12 @@ namespace zhiyueBook.WinUI
             // 冻结字段, 和奇偶行样式冲突
             DataGridViewHelp.ColumnReadOnly(this.dgvMain);
             DataGridViewHelp.SetStyleGrid(this.dgvMain);
+        }
 
-            // 设置dgvMain的数据源
-            this.ShowList();
-            this.dgvMain.DataSource = bQueryList;
+        private void JcReaderForm_Load(object sender, EventArgs e)
+        {
+            // 绑定数据
+            this.Find();
         }
 
         private void btnGrpsCurd_UCExtBtnClicked(object sender, EventArgs e)
@@ -51,42 +55,20 @@ namespace zhiyueBook.WinUI
         }
 
         private void btnFind_Click(object sender, EventArgs e)
-        {
-            this.ShowList();
-            this.dgvMain.DataSource = bQueryList;
+        {         
+            this.Find();
         }
 
 
         // 根据“关键字”查询
-        private void QueryByKeyWord()
+        private void Find()
         {
-            this.ShowList();
-            this.dgvMain.DataSource = bQueryList;
-        }
-
-        /// <summary>
-        /// 显示所有信息
-        /// </summary>
-        private void ShowList()
-        {
-            this.queryList = srv.Query(txtKeyWord.Text.Trim());
-            this.bQueryList = new BindingCollection<JcReader>(this.queryList);
-            //this.bcQueryList = new BindingCollection<JcReader>(this.queryList);
-            //this.dgvMain.DataSource = bQueryList;
-
-            //this.bQueryList = new BindingList<Tjjy>(this.queryList);
-
-            //MessageBox.Show(this.queryList.Count().ToString());
-            //this.dgvMain.DataSource = this.queryList;
-            
-            //绑定 BindingCollection
-            //this.dgvMain.DataSource = bcQueryList;
-            //this.dgvMain.ba
-
-
+            // 绑定数据
+            listQuery = srv.QueryList(txtKeyWord.Text.Trim());
+            mySource = new BindingCollection<JcReaderModel>(listQuery);
+            this.dgvMain.DataSource = mySource;
             this.ShowState();
-
-        }
+        }             
 
         /// <summary>
         /// 显示状态信息
@@ -94,32 +76,34 @@ namespace zhiyueBook.WinUI
         private void ShowState()
         {
             // 显示借阅信息
-            int allCount = 0,
+            int allCount = 0,       // 全部记录
                 _sumBrBooks = 0,
                 _sumRtBooks = 0,
                 _notRtBooks = 0,
                 normalRd = 0,  // 正常
                 stopRd = 0,    // 停用
-                expireRd = 0;  // 即将过期
+                expireRd = 0,  // 过期
+                willExpireRd = 0;  // 即将过期
 
 
-            allCount = this.queryList.Count();
+            allCount = this.listQuery.Count();　　// 获取全部记录
             //_sumBrBooks = this.queryList.Sum(it => it.SumBrBooks);
             //_sumRtBooks = this.queryList.Sum(it => it.SumRtBooks);
             //_notRtBooks = this.queryList.Sum(it => it.NotRtBooks);
 
-            normalRd = this.queryList.Count(it => it.State == "正常");
-            stopRd = this.queryList.Count(it => it.State == "停用");
-            expireRd = this.queryList.Count(it => it.State == "即将过期");
+            normalRd = this.listQuery.Count(it => it.State == "正常");
+            stopRd = this.listQuery.Count(it => it.State == "停用");
+            expireRd = this.listQuery.Count(it => it.State == "过期");
+            willExpireRd = this.listQuery.Count(it => it.State == "即将过期");
 
             this.lblAllCount.Text = string.Format("总记录：{0}", allCount.ToString());
 
-            this.lblSumBrBooks.Text = string.Format("借阅总数：{0} 本", _sumBrBooks.ToString());
+            //this.lblSumBrBooks.Text = string.Format("借阅总数：{0} 本", _sumBrBooks.ToString());
             //this.lblSumRtBooks.Text = string.Format("还书总数：{0} 本", _sumRtBooks.ToString());
             //this.lblNotRtBooks.Text = string.Format("未还数：{0} 本", _notRtBooks.ToString());
 
-            this.lblState.Text = string.Format("其中：正常：{0}人,  停用：{1}人,  即将到期：{2}人",
-                normalRd, stopRd, expireRd);
+            this.lblState.Text = string.Format("其中：正常：{0}人，  停用/过期：{1}人，  即将到期：{2}人",
+                normalRd, stopRd + expireRd, willExpireRd);
 
         }
 
@@ -132,86 +116,121 @@ namespace zhiyueBook.WinUI
         {
             if (e.KeyChar == (char)Keys.Enter)
             {
-                this.QueryByKeyWord();
+                this.Find();
+            }
+        }
+
+        #region 修改
+        private void Mod()
+        {
+            /**
+             * 1. 获取当前行和对象，并转化为对象
+             * 2. 传递对象到打开的编辑窗口中
+             * 3. 如果编辑窗口时保存，则进行修改：
+             *   3.1 修改数据库数据后，dgv自动更新数据
+             *   3.2 需要找到treeview节点并更新name数据
+             */
+
+            JcReaderModel currRowObj = null;
+            int rowIndex = dgvMain.CurrentRow.Index;
+            if (rowIndex >= 0)
+            {
+                DataGridViewRow row = dgvMain.Rows[rowIndex];
+                currRowObj = row.DataBoundItem as JcReaderModel;
+
+                JcReaderXxForm frm = new JcReaderXxForm(currRowObj);
+
+                frm.ShowDialog();
+
+                if (frm.DialogResult == DialogResult.OK)
+                {
+                    // 修改
+                    JcReaderModel modObj = new JcReaderModel();
+                    modObj = frm.curObject;  // 新对象=Dialog窗口.curObject对象                    
+
+                    int result = srv.Upd(modObj);
+                    if (result == 1)
+                    {
+                        MessageBox.Show("修改成功！", "提示",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                frm.Close();
             }
         }
 
         private void dgvMain_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            if (e.ColumnIndex < 0 || e.RowIndex < 0) return;
-
-            //双击行时能得到rowIndex
-            int index = e.RowIndex;
-
-            // 当前行获取值
-            if (this.dgvMain.CurrentRow == null) return;
-            DataGridViewRow dgvr = this.dgvMain.CurrentRow;
-            string val = dgvr.Cells["cRcode"].Value.ToString();
-            //MessageBox.Show(val);
-
-            // 利用构造函数传值到弹出页面，并在构造函数中做赋值操作            
-            JcReader curobj = new JcReader();
-            // 根据cid获取obj实例
-            curobj = srv.GetSingleObj(Convert.ToInt32(dgvr.Cells["cid"].Value));
-            
-            // 设置传递的值
-            PostArgHelper postArg = new PostArgHelper();
-            postArg.postFlag = PostArgType.Mod ;
-            postArg.postObj = curobj;
-
-            JcReaderXxForm frm = new JcReaderXxForm(postArg);
-            //JcReaderXxForm frm = new JcReaderXxForm();
-            frm.ShowDialog();
+            this.Mod();
         }
+        
+        #endregion
 
-
-        /// <summary>
-        /// 选中当前的“读者”，并关闭窗口返回
-        /// </summary>
-        private void SelectedMember()
-        {
-            // 【1】 选中选择的对象
-            int rowIndex = this.dgvMain.CurrentRow.Index;
-            if (rowIndex < 0) return;
-
-            DataGridViewRow row = dgvMain.Rows[rowIndex];
-            JcReader curReader = row.DataBoundItem as JcReader;
-
-            // 【2】 保存当前已经修改的对象
-            //  窗体提供了Tag属性，可以存储任意的属性
-            this.Tag = curReader;
-
-            // 设置传递的值
-            PostArgHelper postArg = new PostArgHelper();
-            postArg.postFlag = PostArgType.Mod;
-            postArg.postObj = curReader;
-
-            JcReaderXxForm frm = new JcReaderXxForm(postArg);
-            frm.ShowDialog();
-
-            //curReader.Remark = "testtest111";
-            ((JcReader)this.Tag).Remark = "testtest111";
-            //this.DialogResult = DialogResult.OK; // 设定窗口返回值
-            //this.Close();
-        }
-
-
+        #region 新增
         private void btnGrpsCurd_UCAddBtnClicked(object sender, EventArgs e)
         {
+            this.Add();   
+        }      
 
-            // 设置传递的值
-            PostArgHelper postArg = new PostArgHelper();
-            postArg.postFlag = PostArgType.New;
-            postArg.postObj = null;
-
-            JcReaderXxForm frm = new JcReaderXxForm(postArg);
-            //JcReaderXxForm frm = new JcReaderXxForm();
+        /// <summary>
+        /// 会员类型新增
+        /// </summary>
+        private void Add() 
+        {
+            JcReaderXxForm frm = new JcReaderXxForm(null);
             frm.ShowDialog();
+
+            if (frm.DialogResult == DialogResult.OK)
+            {
+                // 新增
+                JcReaderModel newObj = new JcReaderModel();
+                newObj = frm.curObject;  // 新对象=Dialog窗口.curObject对象
+
+                int result = srv.Add(newObj);
+                if (result == 1)
+                {
+                    ListQuery.Add(newObj);
+                    this.mySource.Add(newObj);      // 数据源新增               
+                }
+            }
+            frm.Close();
+
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        #endregion
+
+        private void btnGrpsCurd_UCDelBtnClicked(object sender, EventArgs e)
         {
-            SelectedMember();
+            JcReaderModel currRowObj = null;
+            int rowIndex = dgvMain.CurrentRow.Index;
+            if (rowIndex >= 0)
+            {
+                DataGridViewRow row = dgvMain.Rows[rowIndex];
+                currRowObj = row.DataBoundItem as JcReaderModel;
+
+                string msg = string.Empty;
+                
+                if (srv.GetBrNumByCode(currRowObj.Rcode) >0 )
+                {
+                    msg = string.Format("读者【{0}】有借阅数据，不能删除", currRowObj.Rname);
+                    MessageBox.Show(msg, "提示", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    msg = string.Format("确定删除读者【{0}】?", currRowObj.Rname);                    
+                    DialogResult result = MessageBox.Show(msg, "提示",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+
+                    if (result == DialogResult.Yes)
+                    {
+                        if (srv.Del(currRowObj) == 1)  // 数据库删除成功，执行dgv删除行
+                        {
+                            this.dgvMain.Rows.Remove(row);
+                        }
+                    }
+                }
+            }
+            
         }
        
     }

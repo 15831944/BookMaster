@@ -45,6 +45,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomDgv\DgvDict.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomDgv\DgvDict.Designer.cs">
+      <DependentUpon>DgvDict.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -63,11 +69,11 @@
     <Compile Include="DictDataForm.Designer.cs">
       <DependentUpon>DictDataForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="DictDataXxFormcs.cs">
+    <Compile Include="DictDataXxForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DictDataXxFormcs.Designer.cs">
-      <DependentUpon>DictDataXxFormcs.cs</DependentUpon>
+    <Compile Include="DictDataXxForm.Designer.cs">
+      <DependentUpon>DictDataXxForm.cs</DependentUpon>
     </Compile>
     <Compile Include="JcReaderForm.cs">
       <SubType>Form</SubType>
@@ -143,8 +149,23 @@
     <Compile Include="DictTypeXxForm.Designer.cs">
       <DependentUpon>DictTypeXxForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="DictDataForm1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DictDataForm1.Designer.cs">
+      <DependentUpon>DictDataForm1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MbTypeXxForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MbTypeXxForm.Designer.cs">
+      <DependentUpon>MbTypeXxForm.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="CustomDgv\DgvDict.resx">
+      <DependentUpon>DgvDict.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -154,8 +175,8 @@
     <EmbeddedResource Include="DictDataForm.resx">
       <DependentUpon>DictDataForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DictDataXxFormcs.resx">
-      <DependentUpon>DictDataXxFormcs.cs</DependentUpon>
+    <EmbeddedResource Include="DictDataXxForm.resx">
+      <DependentUpon>DictDataXxForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="JcReaderForm.resx">
       <DependentUpon>JcReaderForm.cs</DependentUpon>
@@ -193,6 +214,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DictTypeXxForm.resx">
       <DependentUpon>DictTypeXxForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DictDataForm1.resx">
+      <DependentUpon>DictDataForm1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MbTypeXxForm.resx">
+      <DependentUpon>MbTypeXxForm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

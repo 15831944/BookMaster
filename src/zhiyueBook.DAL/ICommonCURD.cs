@@ -28,7 +28,7 @@ namespace zhiyueBook.DAL
         /// </summary>
         /// <param name="keyword"></param>
         /// <returns></returns>
-        List<T> Query(string keyword);
+        List<T> QueryList(string keyword);
 
         /// <summary>
         /// 新增
@@ -49,7 +49,8 @@ namespace zhiyueBook.DAL
         /// </summary>
         /// <param name="obj"></param>
         /// <returns></returns>
-        int Del(T obj);  
+        int Del(T obj);
 
+        int Del(string id);
     }
 }

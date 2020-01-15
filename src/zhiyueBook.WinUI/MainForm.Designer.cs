@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.tsmi_xtsz = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiJcsj = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmi_jczl = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiReader = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiBook = new System.Windows.Forms.ToolStripMenuItem();
@@ -53,9 +54,9 @@
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.tsBtn_Jytj = new System.Windows.Forms.ToolStripButton();
             this.tsBtn_nyfx = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.tsBtn_Tstj = new System.Windows.Forms.ToolStripButton();
-            this.tsmiJcsj = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsBtn_Jcsj = new System.Windows.Forms.ToolStripButton();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -81,6 +82,13 @@
             this.tsmi_xtsz.Size = new System.Drawing.Size(84, 21);
             this.tsmi_xtsz.Text = "系统设置(&X)";
             // 
+            // tsmiJcsj
+            // 
+            this.tsmiJcsj.Name = "tsmiJcsj";
+            this.tsmiJcsj.Size = new System.Drawing.Size(137, 22);
+            this.tsmiJcsj.Text = "基础数据(&J)";
+            this.tsmiJcsj.Click += new System.EventHandler(this.tsmiJcsj_Click);
+            // 
             // tsmi_jczl
             // 
             this.tsmi_jczl.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -93,14 +101,14 @@
             // tsmiReader
             // 
             this.tsmiReader.Name = "tsmiReader";
-            this.tsmiReader.Size = new System.Drawing.Size(152, 22);
+            this.tsmiReader.Size = new System.Drawing.Size(140, 22);
             this.tsmiReader.Text = "读者管理(&R)";
             this.tsmiReader.Click += new System.EventHandler(this.tsmiReader_Click);
             // 
             // tsmiBook
             // 
             this.tsmiBook.Name = "tsmiBook";
-            this.tsmiBook.Size = new System.Drawing.Size(152, 22);
+            this.tsmiBook.Size = new System.Drawing.Size(140, 22);
             this.tsmiBook.Text = "图书管理(&B)";
             this.tsmiBook.Click += new System.EventHandler(this.tsmiBook_Click);
             // 
@@ -194,8 +202,9 @@
             this.toolStripSeparator2,
             this.tsBtn_Jytj,
             this.tsBtn_nyfx,
+            this.tsBtn_Tstj,
             this.toolStripSeparator1,
-            this.tsBtn_Tstj});
+            this.tsBtn_Jcsj});
             this.toolStrip1.Location = new System.Drawing.Point(0, 25);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
@@ -262,11 +271,6 @@
             this.tsBtn_nyfx.Text = "借阅分析";
             this.tsBtn_nyfx.Click += new System.EventHandler(this.tsBtn_nyfx_Click);
             // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 39);
-            // 
             // tsBtn_Tstj
             // 
             this.tsBtn_Tstj.Image = ((System.Drawing.Image)(resources.GetObject("tsBtn_Tstj.Image")));
@@ -276,12 +280,20 @@
             this.tsBtn_Tstj.Text = "图书统计";
             this.tsBtn_Tstj.Click += new System.EventHandler(this.tsmi_Tstj_Click);
             // 
-            // tsmiJcsj
+            // toolStripSeparator1
             // 
-            this.tsmiJcsj.Name = "tsmiJcsj";
-            this.tsmiJcsj.Size = new System.Drawing.Size(152, 22);
-            this.tsmiJcsj.Text = "基础数据(&J)";
-            this.tsmiJcsj.Click += new System.EventHandler(this.tsmiJcsj_Click);
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 39);
+            // 
+            // tsBtn_Jcsj
+            // 
+            this.tsBtn_Jcsj.Image = ((System.Drawing.Image)(resources.GetObject("tsBtn_Jcsj.Image")));
+            this.tsBtn_Jcsj.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsBtn_Jcsj.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsBtn_Jcsj.Name = "tsBtn_Jcsj";
+            this.tsBtn_Jcsj.Size = new System.Drawing.Size(92, 36);
+            this.tsBtn_Jcsj.Text = "基础数据";
+            this.tsBtn_Jcsj.Click += new System.EventHandler(this.tsmiJcsj_Click);
             // 
             // MainForm
             // 
@@ -335,6 +347,7 @@
         private System.Windows.Forms.ToolStripButton tsBtnBook;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripMenuItem tsmiJcsj;
+        private System.Windows.Forms.ToolStripButton tsBtn_Jcsj;
     }
 }
 

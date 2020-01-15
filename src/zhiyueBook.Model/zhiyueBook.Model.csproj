@@ -42,13 +42,14 @@
   <ItemGroup>
     <Compile Include="DictModel.cs" />
     <Compile Include="DictTypeModel.cs" />
-    <Compile Include="JcReader.cs" />
+    <Compile Include="JcReaderModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tjjy.cs" />
     <Compile Include="Jyxx.cs" />
     <Compile Include="Tjjyfx.cs" />
     <Compile Include="Tjts.cs" />
     <Compile Include="Tjtsxx.cs" />
+    <Compile Include="MbTypeModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\RiziFrame.Utility\RiziFrame.Utility.csproj">

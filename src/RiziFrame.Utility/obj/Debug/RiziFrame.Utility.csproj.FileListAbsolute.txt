@@ -15,3 +15,4 @@ D:\NetWs\BookMaster\src\RiziFrame.Utility\obj\Debug\RiziFrame.Utility.pdb
 D:\NetWs\BookMaster\src\RiziFrame.Utility\obj\Debug\RiziFrame.Utility.Uc.BtnGrp1.resources
 D:\NetWs\BookMaster\src\RiziFrame.Utility\obj\Debug\RiziFrame.Utility.Properties.Resources.resources
 D:\NetWs\BookMaster\src\RiziFrame.Utility\obj\Debug\RiziFrame.Utility.Uc.BtnGrp2.resources
+D:\NetWs\BookMaster\src\RiziFrame.Utility\obj\Debug\RiziFrame.Utility.csprojResolveAssemblyReference.cache

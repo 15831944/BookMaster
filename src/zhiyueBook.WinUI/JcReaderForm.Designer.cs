@@ -42,6 +42,7 @@
             this.cName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cSex = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cMembType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cTypeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cAgeBrith = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cLinkTel = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cRegDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,7 +61,6 @@
             this.btnFind = new System.Windows.Forms.Button();
             this.pnlTop = new System.Windows.Forms.Panel();
             this.btnGrpsCurd = new RiziFrame.Utility.Uc.BtnGrp1();
-            this.button1 = new System.Windows.Forms.Button();
             this.pnlMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMain)).BeginInit();
             this.pnlTopRight.SuspendLayout();
@@ -91,6 +91,7 @@
             this.cName,
             this.cSex,
             this.cMembType,
+            this.cTypeName,
             this.cAgeBrith,
             this.cLinkTel,
             this.cRegDate,
@@ -168,11 +169,19 @@
             // 
             // cMembType
             // 
-            this.cMembType.DataPropertyName = "MembType";
+            this.cMembType.DataPropertyName = "MembTypeId";
             this.cMembType.Frozen = true;
             this.cMembType.HeaderText = "会员类型";
             this.cMembType.Name = "cMembType";
+            this.cMembType.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.cMembType.Visible = false;
             this.cMembType.Width = 80;
+            // 
+            // cTypeName
+            // 
+            this.cTypeName.DataPropertyName = "MembTypeName";
+            this.cTypeName.HeaderText = "会员类型名称";
+            this.cTypeName.Name = "cTypeName";
             // 
             // cAgeBrith
             // 
@@ -312,7 +321,6 @@
             // 
             // pnlTop
             // 
-            this.pnlTop.Controls.Add(this.button1);
             this.pnlTop.Controls.Add(this.btnGrpsCurd);
             this.pnlTop.Controls.Add(this.txtKeyWord);
             this.pnlTop.Controls.Add(this.label1);
@@ -330,17 +338,8 @@
             this.btnGrpsCurd.Size = new System.Drawing.Size(387, 33);
             this.btnGrpsCurd.TabIndex = 11;
             this.btnGrpsCurd.UCAddBtnClicked += new RiziFrame.Utility.Uc.BtnGrp1.UCAddBtnClickHandle(this.btnGrpsCurd_UCAddBtnClicked);
+            this.btnGrpsCurd.UCDelBtnClicked += new RiziFrame.Utility.Uc.BtnGrp1.UCDelBtnClickHandle(this.btnGrpsCurd_UCDelBtnClicked);
             this.btnGrpsCurd.UCExtBtnClicked += new RiziFrame.Utility.Uc.BtnGrp1.UCExtBtnClickHandle(this.btnGrpsCurd_UCExtBtnClicked);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(753, 13);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // JcReaderForm
             // 
@@ -351,6 +350,7 @@
             this.Controls.Add(this.pnlTop);
             this.Name = "JcReaderForm";
             this.Text = "读者管理";
+            this.Load += new System.EventHandler(this.JcReaderForm_Load);
             this.pnlMain.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMain)).EndInit();
             this.pnlTopRight.ResumeLayout(false);
@@ -381,6 +381,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cName;
         private System.Windows.Forms.DataGridViewTextBoxColumn cSex;
         private System.Windows.Forms.DataGridViewTextBoxColumn cMembType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cTypeName;
         private System.Windows.Forms.DataGridViewTextBoxColumn cAgeBrith;
         private System.Windows.Forms.DataGridViewTextBoxColumn cLinkTel;
         private System.Windows.Forms.DataGridViewTextBoxColumn cRegDate;
@@ -390,6 +391,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cPinYin;
         private System.Windows.Forms.DataGridViewTextBoxColumn cAddress;
         private System.Windows.Forms.DataGridViewTextBoxColumn cRemark;
-        private System.Windows.Forms.Button button1;
     }
 }

@@ -193,7 +193,12 @@ namespace RiziFrame.Utility.Uc
         /// <param name="dg"></param>
         public static void SetStyleGrid(DataGridView dg, bool QiOuRowBgColor = true )
         {
-            SetStyleGrid(dg,  26, QiOuRowBgColor);
+            SetStyleGrid(dg,  28, QiOuRowBgColor);
+        }
+
+        public static void SetStyleGrid(DataGridView dg, int colHeadersHeight)
+        {
+            SetStyleGrid(dg, colHeadersHeight, true);
         }
 
         public static void SetStyleGrid(DataGridView dg, int colHeadersHeight, bool QiOuRowBgColor = true)
@@ -208,6 +213,8 @@ namespace RiziFrame.Utility.Uc
             //dg.CellBorderStyle = DataGridViewCellBorderStyle.None;
             dg.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             dg.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+
+            dg.RowTemplate.Height = colHeadersHeight;
 
             //dg.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Raised;
             //dg.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Raised;
@@ -285,6 +292,28 @@ namespace RiziFrame.Utility.Uc
         }
         #endregion
 
+        /// <summary>
+        /// 获取当前行，返回object, 然后用as或者(Class)进行强制转换所需要的类对象
+        /// </summary>
+        /// <param name="dgv"></param>
+        /// <returns></returns>
+        public static DgvCurrentObject GetDgvCurrentObject(DataGridView dgv)
+        {
+            DgvCurrentObject obj = null;
+            int rowIndex = dgv.CurrentRow.Index;
+            if (rowIndex >= 0)
+            {
+                DataGridViewRow row = dgv.Rows[rowIndex];
+                obj.CurrentRow = rowIndex;
+                obj.CurrentObject = row.DataBoundItem as Object;
+            }
+            return obj;
+        }
 
+        public class DgvCurrentObject
+        { 
+            public int CurrentRow { get;set;}  // 返回dgv当前行
+            public object CurrentObject { get; set; } // 返回dgv当前对象
+        }
     }
 }

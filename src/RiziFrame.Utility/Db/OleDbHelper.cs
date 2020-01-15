@@ -145,7 +145,7 @@ namespace RiziFrame.Utility.Db
         /// </summary>  
         /// <param name="sql">SQL语句</param>  
         /// <returns></returns>  
-        public static DataTable GetDataTable(string sql)
+        public static DataTable GetDataTable(string sql, string tableName)
         {
             try
             {
@@ -153,7 +153,7 @@ namespace RiziFrame.Utility.Db
                 Cmd.CommandText = sql;
                 Da = new OleDbDataAdapter();
                 Da.SelectCommand = Cmd;
-                Dt = new DataTable();
+                Dt = new DataTable(tableName);
                 Da.Fill(Dt);
                 return Dt;
             }
@@ -165,6 +165,11 @@ namespace RiziFrame.Utility.Db
             {
                 Close();
             }
+        }
+
+        public static DataTable GetDataTable(string sql)
+        {
+            return GetDataTable(sql, null);
         }
 
         /// <summary>  

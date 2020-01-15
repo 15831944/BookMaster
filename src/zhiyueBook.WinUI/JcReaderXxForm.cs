@@ -14,24 +14,18 @@ namespace zhiyueBook.WinUI
 {
     public partial class JcReaderXxForm : Form
     {
-        // 创建数据访问服务        
-        private ICommonCURD<JcReader> srv = new JcReaderService();
+        public JcReaderModel curObject = new JcReaderModel();
+        private string status = "新增";  // 初始状态=新增
 
-        string postFlag = string.Empty;      // 传递的标志
-        JcReader postObj = new JcReader ();  // 传递的对象
-
-        public JcReaderXxForm(PostArgHelper postArg)
+        public JcReaderXxForm(JcReaderModel postObject)
         {
             InitializeComponent();
-                        
-            // 初始化数据
-            BandingData();
 
-            // 接受传递的数据
-            postFlag = postArg.postFlag.ToString();
-            postObj = (JcReader)postArg.postObj;
+            // 初始化cbb绑定数据
+            this.InitCbbBandingData();
 
-            this.init();
+            // 根据postObject判断“新增”还是“修改”并绑定数据
+            this.BindData(postObject);
             
         }
 
@@ -39,135 +33,144 @@ namespace zhiyueBook.WinUI
         {
             this.Close();
         }
-
-
-        private void init() 
-        {
-            // 修改
-            if ((PostArgType.Mod.ToString()).Equals(postFlag))
-            {                 
-                this.ModStatus(postObj);
-            }
-            else {
-                this.NewStatus(postObj);
-            }
-            
-        }
+      
 
         #region 【1】 窗口打开时的数据显示
         /// <summary>
-        /// 设置mod状态时的数据
+        /// 绑定数据
         /// </summary>
-        private void ModStatus(JcReader obj)
+        /// <param name="obj"></param>
+        private void BindData(JcReaderModel obj)
         {
-            // 设置不可修改字段
-            //this.txtRcode.Enabled = false;
-            //this.dtpRegDate.Enabled = false;
+            // 通过postObject判断是新增，还是修改
+            if (obj != null)
+            {
+                status = "修改";
+                this.BindModData(obj);   // 修改状态时绑定postObj对象数据            
+            }
+            else
+            {
+                this.BindNewData();   // 修改状态时绑定postObj对象数据
+            }
+            this.Text = string.Format("读者信息-{0}", status);
+        }
+
+        private void BindModData(JcReaderModel obj)
+        {
+            // 设置当前对象curObject = 传来的obj对象
+            this.curObject = obj;
 
             // 设置初始化值
             this.txtRcode.Text = obj.Rcode;
-            this.txtRname.Text = obj.Rname;            
+            this.txtRname.Text = obj.Rname;
             this.cbbSex.Text = obj.Sex;
             this.dtpBirthDay.Text = obj.BirthDay.ToShortDateString();
 
             this.txtTel.Text = obj.Tel;
             this.txtMobile.Text = obj.Mobile;
 
-            this.cbbMembType.Text = obj.MembType;
+            this.cbbMembType.SelectedValue = obj.MembTypeId;
+
             this.txtPinyin.Text = obj.PinYin;
             this.txtAddress.Text = obj.Address;
             this.txtRemark.Text = obj.Remark;
-            
+
             this.dtpRegDate.Text = obj.RegDate.ToShortDateString();
-            this.dtpValidityDate.Text = obj.ValidityDate.ToShortDateString();
+
+            DateTime validityDate = DateTime.Parse(Convert.ToDateTime(obj.ValidityDate).ToString("yyyy-MM-dd"));
+            if (validityDate != DateTime.Parse(Convert.ToDateTime(obj.ValidityDate).ToString("0001-1-1")))
+                this.dtpValidityDate.Text = validityDate.ToShortDateString();
+
+            if (obj.Stop == 1) this.cbxStop.Checked = true; // stop = 1; 停用
 
             // 设置标题文字
-            lblTitle.Text = string.Format("{0} -【{1}】", this.txtRname.Text, this.cbbMembType.Text);
-
+            lblTitle.Text = string.Format("会员：{0} -【{1}】", this.txtRname.Text, this.cbbMembType.Text);
         }
 
         /// <summary>
         /// 设置New状态时的数据
         /// </summary>
-        private void NewStatus(JcReader obj)
+        private void BindNewData()
         {
             ControlHelper.DtpTip(this.dtpBirthDay, "按BackSpace键删除日期");
             ControlHelper.DtpTip(this.dtpValidityDate, "按BackSpace键删除日期");
 
-            ControlHelper.DtpNull(this.dtpBirthDay);            
+            ControlHelper.DtpNull(this.dtpBirthDay);
             ControlHelper.DtpNull(this.dtpValidityDate);
+
+            JcReaderService srv = new JcReaderService();
+            // 设置初始化值
+            
+            string maxCode = (Convert.ToInt32(srv.GetMaxCode()) + 1000000001).ToString();
+            string readerCode = maxCode.Substring(1, 9);
+            this.txtRcode.Text = readerCode;
 
             // 设置标题文字
             lblTitle.Text = string.Format("会员：{0} -【{1}】", "xxx", "xx");
-        }
+        }       
+
 
         #endregion
 
-        private void BandingData()
+        private void InitCbbBandingData()
         {
+            // 初始化 cbbSex 下拉数据
             List<string> lstSex = new List<string>();
             lstSex.Add("");
             lstSex.Add("男");
             lstSex.Add("女");       
             ControlHelper.CbbBindData(cbbSex, lstSex);
 
-            ControlHelper.CbbBindData(cbbMembType, lstSex);
-
+            // 初始化 cbbMembType 下拉数据            
+            List<MbTypeModel> lstMbType = new MbTypeService().QueryList("");
+            Dictionary<int, string> kvDictonary = new Dictionary<int, string>();
+            kvDictonary.Add(-1, "");
+            foreach (MbTypeModel item in lstMbType)
+            {
+                kvDictonary.Add(item.Id, item.Name);
+            }
+            ControlHelper.CbbBindData(cbbMembType, kvDictonary);            
         }
-
-        /// <summary>
-        /// 获取 窗口 共有数据
-        /// </summary>
-        private JcReader GetWindowPublicData()
-        {
-            // 修改
-            JcReader obj = new JcReader();
-
-            obj.id = postObj.id;
-            obj.Rcode = this.txtRcode.Text;
-            obj.Rname = this.txtRname.Text;
-            obj.Sex = this.cbbSex.Text;
-            obj.BirthDay = this.dtpBirthDay.Value;
-
-            obj.Tel = this.txtTel.Text;
-            obj.Mobile = this.txtMobile.Text;
-
-            obj.MembType = this.cbbMembType.Text;
-            obj.PinYin = this.txtPinyin.Text;
-            obj.Address = this.txtAddress.Text;
-            obj.Remark = this.txtRemark.Text;
-
-            obj.ValidityDate = this.dtpValidityDate.Value;
-
-            return obj;
-        }
-
+       
         /// <summary>
         /// 保存
         /// </summary>
         private void Save()
         {
-            JcReader obj = GetWindowPublicData();
-
-            if ((PostArgType.Mod.ToString()).Equals(postFlag))
-            {
-                //MessageBox.Show(JcReaderForm
-
-                int val = srv.Upd(obj);
-                if (val == 1)
-                    MessageBox.Show("保存成功！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                // 新增
-                //this.New(postObj);
-            }
-           
+            this.Close();           
         }
 
         private void btnGrp21_UCSaveBtnClicked(object sender, EventArgs e)
-        {            
-            this.Save();
+        {
+            //if (!ControlHelper.TextBoxNoEmpty(this.txtName, "名称")) return;
+            //if (!ControlHelper.TextBoxOnlyNumber(this.txtHuiFee, "会费")) return;
+            //if (!ControlHelper.TextBoxOnlyNumber(this.txtMaxOutNums, "最大借出册数")) return;
+            //if (!ControlHelper.TextBoxOnlyNumber(this.txtYaJin, "押金")) return;
+
+            // 赋值            
+            curObject.Rcode = this.txtRcode.Text;
+            curObject.Rname = this.txtRname.Text;
+            curObject.Sex = this.cbbSex.Text;
+            curObject.BirthDay = this.dtpBirthDay.Value;
+
+            curObject.Tel = this.txtTel.Text;
+            curObject.Mobile = this.txtMobile.Text;
+
+            curObject.MembTypeId = Convert.ToInt32(this.cbbMembType.SelectedValue);
+            curObject.MembTypeName = this.cbbMembType.Text;
+
+            curObject.PinYin = this.txtPinyin.Text;
+            curObject.Address = this.txtAddress.Text;
+            curObject.Remark = this.txtRemark.Text;
+
+            curObject.RegDate = this.dtpRegDate.Value;
+            curObject.ValidityDate = this.dtpValidityDate.Value;
+
+            // stop = 1; 停用
+            curObject.Stop = (this.cbxStop.Checked) ? 1 : 0;
+
+
+            this.DialogResult = DialogResult.OK;   // 直接设置窗口的DialogResult = DialogResult.OK
         }
 
 

@@ -100,9 +100,9 @@ namespace zhiyueBook.WinUI
         /// </summary>
         private void FrmJcsj()
         {
-            if (!IsChildWinOpened("JcJcsjForm"))
+            if (!IsChildWinOpened("JcJcsjForm1"))
             {
-                DictDataForm frm = new DictDataForm();
+                DictDataForm1 frm = new DictDataForm1();
                 frm.MdiParent = this;
                 frm.WindowState = FormWindowState.Maximized;
                 frm.Show();

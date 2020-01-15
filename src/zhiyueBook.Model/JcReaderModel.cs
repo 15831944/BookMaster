@@ -6,9 +6,9 @@ using RiziFrame.Utility.Common;
 
 namespace zhiyueBook.Model
 {
-    public class JcReader
+    public class JcReaderModel
     {
-        public JcReader() { }
+        public JcReaderModel() { }
 
         /*
          * id：主键
@@ -39,7 +39,8 @@ namespace zhiyueBook.Model
         public string Sex { get; set; }
         public DateTime BirthDay { get; set; }      // 生日
 
-        public string MembType { get; set; }        // 会员类型   
+        public int MembTypeId { get; set; }        // 会员类型Id   
+        public string MembTypeName { get; set;}    // 会员类型名称  
 
         public string Tel { get; set; }
         public string Mobile { get; set; }
@@ -101,7 +102,10 @@ namespace zhiyueBook.Model
 
                 if (Stop != 1)  // 停用 = 0
                 {
-                    val = Math.Abs((ValidityDate - System.DateTime.Now).Days);
+                    val = (ValidityDate - System.DateTime.Now).Days;
+                    val = val<0 ? 0: val;
+                    
+                    //val = Math.Abs((ValidityDate - System.DateTime.Now).Days);
                 }
                 return val;
             }
@@ -122,6 +126,7 @@ namespace zhiyueBook.Model
                 {
                     // 剩余天数<=10 即将过期
                     if (SyDays <= 10) { val = "即将过期"; }
+                    if (SyDays <= 0) { val = "过期"; }
                 }
 
                 return val;

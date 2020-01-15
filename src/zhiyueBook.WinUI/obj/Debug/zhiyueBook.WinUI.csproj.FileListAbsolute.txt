@@ -35,6 +35,9 @@ D:\NetWs\BookMaster\src\zhiyueBook.WinUI\obj\Debug\zhiyueBook.WinUI.JcBookForm.r
 D:\NetWs\BookMaster\src\zhiyueBook.WinUI\obj\Debug\zhiyueBook.WinUI.JcReaderForm.resources
 D:\NetWs\BookMaster\src\zhiyueBook.WinUI\obj\Debug\zhiyueBook.WinUI.Properties.Resources.resources
 D:\NetWs\BookMaster\src\zhiyueBook.WinUI\obj\Debug\zhiyueBook.WinUI.JcReaderXxForm.resources
-D:\NetWs\BookMaster\src\zhiyueBook.WinUI\obj\Debug\zhiyueBook.WinUI.DictDataXxFormcs.resources
 D:\NetWs\BookMaster\src\zhiyueBook.WinUI\obj\Debug\zhiyueBook.WinUI.DictTypeXxForm.resources
 D:\NetWs\BookMaster\src\zhiyueBook.WinUI\obj\Debug\zhiyueBook.WinUI.DictDataForm.resources
+D:\NetWs\BookMaster\src\zhiyueBook.WinUI\obj\Debug\zhiyueBook.WinUI.CustomDgv.DgvDict.resources
+D:\NetWs\BookMaster\src\zhiyueBook.WinUI\obj\Debug\zhiyueBook.WinUI.DictDataXxForm.resources
+D:\NetWs\BookMaster\src\zhiyueBook.WinUI\obj\Debug\zhiyueBook.WinUI.DictDataForm1.resources
+D:\NetWs\BookMaster\src\zhiyueBook.WinUI\obj\Debug\zhiyueBook.WinUI.MbTypeXxForm.resources

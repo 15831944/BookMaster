@@ -17,10 +17,10 @@ namespace zhiyueBook.Model
 
         //public string State { get; set; } 
 
-        public int id { get; set; }
-        public int parentId { get; set; }
-        public string code { get; set; }  
-        public string name { get; set; }
+        public int Id { get; set; }
+        public int ParentId { get; set; }
+        public string Code { get; set; }  
+        public string Name { get; set; }
         
     }
 }
